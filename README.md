@@ -9,6 +9,15 @@
 - Inside the 'src/config' folder create a new file 'config.json' and then add the following of json
 
 ```
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'yournewpassword';
-
+{
+  "development": {
+    "username": "root",
+    "password": "abhi",
+    "database": "Flights_Search_DB_DEV",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
 ```
+
+- Once you've added your db config as listed above, go the src folder from your terminal and execute 'npx sequelize create:db'
