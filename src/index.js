@@ -3,12 +3,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { port } = require("./config/serverConfig");
 
-require("dotenv").config();
 const startServer = async () => {
+  // How this models work for us and how it is working for us
   const app = express();
+  // this is the middle-ware we have added so far
+  // ================================================
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
-  app.get("/", (req, res) => {
+  app.get("/", (_req, res) => {
+    // ==============================================
     res.send("hello wworld");
   });
   app.listen(port, function () {
